@@ -1,32 +1,17 @@
-
-/* =========================
-   VARIABLES
-========================= */
-
 :root {
     --bg-color: #0b0b10;
     --surface: #13131b;
     --surface-hover: #1b1b27;
-
     --accent: #9670ff;
     --accent-light: #b39aff;
-
     --text: #f4f2fa;
     --muted: #9995a8;
-
     --border: rgba(255, 255, 255, 0.08);
-
     --radius: 18px;
     --transition: 0.25s ease;
-
     --animation-duration: 650ms;
     --animation-easing: cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-
-/* =========================
-   GLOBAL
-========================= */
 
 * {
     box-sizing: border-box;
@@ -34,6 +19,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 115px;
 }
 
 body {
@@ -49,28 +35,20 @@ a {
     text-decoration: none;
 }
 
-
-/* =========================
-   NAVIGATION
-========================= */
-
 nav {
     display: flex;
-    position: absolute;
+    position: fixed;
     z-index: 10;
     top: 0;
     width: 100%;
     padding: 24px;
-
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
     gap: 16px;
-
     background: rgba(11, 11, 16, 0.45);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-
     border-bottom: 1px solid var(--border);
 }
 
@@ -85,49 +63,33 @@ nav a.active {
     color: var(--accent-light);
 }
 
-
-/* =========================
-   HERO
-========================= */
-
 .hero {
     position: relative;
     isolation: isolate;
-
     width: 100%;
     min-height: 100svh;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow: hidden;
-
     background: var(--bg-color);
 }
-
-/* BACKGROUND IMAGE */
 
 .hero-image {
     position: absolute;
     inset: 0;
     z-index: -2;
-
     background-image: url("images/Cantina.png");
     background-position: center 45%;
     background-size: cover;
     background-repeat: no-repeat;
-
     transform: scale(1.02);
 }
-
-/* GRADIENT OVERLAY */
 
 .hero-overlay {
     position: absolute;
     inset: 0;
     z-index: -1;
-
     background:
         linear-gradient(
             180deg,
@@ -138,19 +100,13 @@ nav a.active {
         );
 }
 
-/* HERO CONTENT */
-
 .hero-content {
     position: relative;
     z-index: 2;
-
     width: 100%;
     max-width: 1000px;
-
     padding: 140px 24px 100px;
-
     text-align: center;
-
     animation: heroEntrance 1s var(--animation-easing) both;
 }
 
@@ -159,57 +115,51 @@ nav a.active {
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 3px;
+    background-color: rgba(12, 12, 187, 0.25);
+    margin-top: 20px;
+    padding: 5px 20px;
+    border-radius: 10px;
+    display: inline-block;
 }
 
 .hero-content h1 {
     margin: 20px 0;
-
     font-size: clamp(42px, 7vw, 82px);
     line-height: 1.08;
     letter-spacing: -3px;
-
     color: white;
-
     text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
 .hero-description {
     max-width: 620px;
     margin: 25px auto;
-
     color: rgba(255, 255, 255, 0.8);
     font-size: clamp(15px, 2vw, 19px);
 }
 
-/* HERO BUTTON */
-
-.hero-button {
+.hero-button,
+.cv-button {
     display: inline-block;
-
     margin-top: 20px;
     padding: 14px 28px;
-
     color: white;
     background: var(--accent);
-
     border-radius: 10px;
-
     font-size: 14px;
     font-weight: 600;
-
     transition:
         transform 300ms ease,
         background 300ms ease,
         box-shadow 300ms ease;
 }
 
-.hero-button:hover {
+.hero-button:hover,
+.cv-button:hover {
     transform: translateY(-4px);
     background: var(--accent-light);
     box-shadow: 0 10px 30px rgba(150, 112, 255, 0.3);
 }
-
-/* HERO ANIMATION */
 
 @keyframes heroEntrance {
     from {
@@ -223,11 +173,6 @@ nav a.active {
     }
 }
 
-
-/* =========================
-   MAIN
-========================= */
-
 main {
     max-width: 1150px;
     margin: auto;
@@ -236,7 +181,6 @@ main {
 
 main section {
     margin-bottom: 150px;
-    scroll-margin-top: 115px;
 }
 
 h2 {
@@ -255,11 +199,6 @@ h3 {
     color: var(--muted);
 }
 
-
-/* =========================
-   ABOUT
-========================= */
-
 .about-main {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -273,11 +212,6 @@ h3 {
     line-height: 1.9;
 }
 
-
-/* =========================
-   SKILLS
-========================= */
-
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -286,13 +220,10 @@ h3 {
 
 .skills-grid span {
     padding: 16px;
-
     color: var(--accent-light);
     background: var(--surface);
-
     border: 1px solid var(--border);
     border-radius: 10px;
-
     font-size: 13px;
     transition: var(--transition);
 }
@@ -302,11 +233,6 @@ h3 {
     border-color: var(--accent);
     transform: translateY(-3px);
 }
-
-
-/* =========================
-   PROJECTS
-========================= */
 
 .projects-container {
     display: grid;
@@ -318,17 +244,13 @@ h3 {
 .project-card {
     position: relative;
     overflow: hidden;
-
     display: flex;
     flex-direction: column;
-
     min-height: 330px;
     padding: 28px;
-
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-
     transition:
         transform 300ms var(--animation-easing),
         border-color 300ms ease,
@@ -365,7 +287,6 @@ h3 {
     width: 100%;
     height: 190px;
     object-fit: cover;
-
     border-radius: 12px;
     border: 1px solid rgba(150, 112, 255, 0.2);
 }
@@ -374,20 +295,16 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-
     margin-top: auto;
     padding-top: 25px;
 }
 
 .project-tags span {
     padding: 6px 11px;
-
     color: var(--accent-light);
     background: rgba(150, 112, 255, 0.08);
-
     border: 1px solid rgba(150, 112, 255, 0.2);
     border-radius: 30px;
-
     font-size: 11px;
 }
 
@@ -402,18 +319,11 @@ h3 {
     color: white;
 }
 
-
-/* =========================
-   AWARDS AND EXPERIENCE
-========================= */
-
 .experience-card {
     padding: 30px;
-
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-
     transition: var(--transition);
 }
 
@@ -432,11 +342,6 @@ h3 {
     font-size: 13px;
 }
 
-
-/* =========================
-   CONTACT
-========================= */
-
 .contact-links {
     display: flex;
     flex-wrap: wrap;
@@ -446,11 +351,9 @@ h3 {
 
 .contact-links a {
     padding: 12px 22px;
-
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-
     transition: var(--transition);
 }
 
@@ -460,11 +363,6 @@ h3 {
     border-color: var(--accent);
     transform: translateY(-3px);
 }
-
-
-/* =========================
-   FOOTER
-========================= */
 
 footer {
     padding: 35px 20px;
@@ -477,13 +375,7 @@ footer p {
     font-size: 13px;
 }
 
-
-/* =========================
-   RESPONSIVE - TABLET
-========================= */
-
 @media (max-width: 850px) {
-
     .about-main {
         grid-template-columns: 1fr;
         gap: 35px;
@@ -496,15 +388,12 @@ footer p {
     .hero {
         min-height: 85svh;
     }
-
 }
 
-
-/* =========================
-   RESPONSIVE - MOBILE
-========================= */
-
 @media (max-width: 550px) {
+    html {
+        scroll-padding-top: 90px;
+    }
 
     nav {
         padding: 18px 12px;
@@ -548,7 +437,6 @@ footer p {
 
     main section {
         margin-bottom: 100px;
-        scroll-margin-top: 85px;
     }
 
     .skills-grid,
@@ -563,16 +451,9 @@ footer p {
     .contact-links a {
         text-align: center;
     }
-
 }
 
-
-/* =========================
-   ACCESSIBILITY
-========================= */
-
 @media (prefers-reduced-motion: reduce) {
-
     html {
         scroll-behavior: auto;
     }
@@ -583,5 +464,4 @@ footer p {
         transition: none !important;
         animation: none !important;
     }
-
 }
