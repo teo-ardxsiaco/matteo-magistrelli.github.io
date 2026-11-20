@@ -212,6 +212,11 @@ h3 {
     line-height: 1.9;
 }
 
+.about-text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
