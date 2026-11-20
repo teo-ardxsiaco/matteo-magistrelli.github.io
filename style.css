@@ -113,7 +113,7 @@ nav a.active {
     inset: 0;
     z-index: -2;
 
-    background-image: url("images/Cantina.jpeg");
+    background-image: url("images/Cantina.png");
     background-position: center 45%;
     background-size: cover;
     background-repeat: no-repeat;
