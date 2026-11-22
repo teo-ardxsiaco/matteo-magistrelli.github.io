@@ -63,6 +63,20 @@ nav a.active {
     color: var(--accent-light);
 }
 
+.menu-toggle {
+    display: none;
+    
+}
+
+.navLinks {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
 .hero {
     position: relative;
     isolation: isolate;
@@ -469,4 +483,22 @@ footer p {
         transition: none !important;
         animation: none !important;
     }
+}
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navLinks {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navLinks.active {
+        display: flex;
+    }
+
 }
